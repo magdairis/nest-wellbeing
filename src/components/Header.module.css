@@ -1,0 +1,10 @@
+.root {
+  background-color: red;
+}
+
+.backdrop {
+  background-color: teal;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
