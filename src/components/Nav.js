@@ -1,7 +1,6 @@
 import { useLocation } from "@reach/router"
-import { motion } from "framer-motion"
 import React from "react"
-import { Link } from "./Link"
+import { Link } from "gatsby"
 
 const links = [
     { href: "/", label: "Home" },
@@ -11,9 +10,9 @@ const links = [
 ]
 
 const NavLink = ({ children, href, label, ...props }) => {
-    // const { pathname } = useLocation()
-    // const pathBeginning = `/${pathname.split("/")[1]}`
-    // const active = pathBeginning === href
+    const { pathname } = useLocation()
+    const pathBeginning = `/${pathname.split("/")[1]}`
+    const active = pathBeginning === href
     return children ? (
         children({ href, label, active, ...props })
     ) : (
