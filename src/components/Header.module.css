@@ -7,4 +7,18 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  z-index: 10;
+}
+
+.container {
+  z-index: 20;
+  position: fixed;
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 30;
+  background-color: indigo;
 }
