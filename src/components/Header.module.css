@@ -1,9 +1,10 @@
 .root {
   background-color: red;
+  @apply text-white;
 }
 
 .backdrop {
-  background-color: teal;
+  @apply bg-teal-700;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -20,5 +21,13 @@
   right: 0;
   top: 0;
   z-index: 30;
-  background-color: indigo;
+  @apply stroke-current mr-4 mt-4;
+}
+
+.banner > a {
+  @apply tracking-wide;
+}
+
+.banner > a > svg {
+  display: inline;
 }
