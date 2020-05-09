@@ -14,20 +14,37 @@
 .container {
   z-index: 20;
   position: fixed;
+  height: theme("spacing.16");
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @apply px-4;
 }
 
 .menu {
-  position: fixed;
-  right: 0;
-  top: 0;
   z-index: 30;
-  @apply stroke-current mr-4 mt-4;
+  @apply stroke-current;
+}
+
+.banner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  @apply text-4xl;
 }
 
 .banner > a {
-  @apply tracking-wide;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  @apply tracking-wide m-1;
 }
 
 .banner > a > svg {
   display: inline;
+}
+
+.banner > a > span {
+  @apply text-lg ml-3;
 }

@@ -27,7 +27,7 @@ const Header = () => {
         className={styles.backdrop}
         variants={{
           closed: {
-            y: `calc(-100% + ${theme.spacing[12]})`
+            y: `calc(-100% + ${theme.spacing[16]})`
           },
           open: {
             y: 0,
