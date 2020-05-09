@@ -17,6 +17,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: `${__dirname}/src/templates/index.js`,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: `${__dirname}/src/components/Layout.js`,
