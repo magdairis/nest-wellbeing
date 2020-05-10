@@ -17,12 +17,25 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/data/pages`
+      }
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: `${__dirname}/src/templates/index.js`,
-        },
-      },
+          default: `${__dirname}/src/templates/index.js`
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/data/pages`
+      }
     },
     {
       resolve: `gatsby-plugin-layout`,
