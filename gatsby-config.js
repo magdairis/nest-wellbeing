@@ -20,8 +20,16 @@ module.exports = {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: `${__dirname}/src/components/Layout.js`,
-      }
-    }
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/data/pages`,
+      },
+    },
+    `gatsby-plugin-mdx`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
