@@ -1,0 +1,22 @@
+.section-blurbs {
+  @apply p-6;
+}
+
+.blurb {
+  @apply mt-6;
+}
+
+.blurb > p {
+  @apply mt-2;
+}
+
+.button {
+  composes: button from global;
+  @apply px-4 py-2 bg-secondary text-white;
+}
+
+.section-blurbs > div:last-child {
+  display: flex;
+  justify-content: center;
+  @apply mt-3;
+}

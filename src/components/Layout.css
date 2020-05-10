@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: theme("colors.teal.700");
+  --color-secondary: #fa6547;
+}
+
 body {
   font-family: "Manjari";
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  font-family: "Montserrat";
+  @apply text-lg font-bold;
+}
+
+.button {
+  @apply text-base text-center;
+  @apply leading-tight tracking-wide;
+  @apply rounded-md shadow-lg;
 }
