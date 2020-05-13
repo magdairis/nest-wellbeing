@@ -1,12 +1,18 @@
-.section-blurbs {
+.section {
   @apply p-6;
 }
 
-.blurb {
+/* container */
+.blurbs {
+  @apply flex flex-wrap justify-between;
+}
+
+/* individual blurb */
+.blurbs > div {
   @apply mt-6;
 }
 
-.blurb > p {
+.blurbs p {
   @apply mt-2;
 }
 
@@ -15,8 +21,20 @@
   @apply px-4 py-2 bg-secondary text-white;
 }
 
-.section-blurbs > div:last-child {
+.section > div:last-child {
   display: flex;
   justify-content: center;
   @apply mt-3;
+}
+
+@screen sm {
+  .blurbs > div {
+    @apply w-5/12 flex-grow max-w-xs;
+  }
+}
+
+@screen lg {
+  .blurbs > div {
+    @apply max-w-sm;
+  }
 }
