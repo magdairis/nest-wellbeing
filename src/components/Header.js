@@ -35,15 +35,17 @@ const Header = () => {
         }}
         transition={{ type: "spring", damping: 25, mass: 0.9, stiffness: 120 }}
       />
-      <motion.div className={styles.container}>
-        <div className={styles.banner}>
-          <Link to="/">
-            <SvgIconNest />
-            <span>Nest Wellbeing</span>
-          </Link>
-        </div>
-        <MenuToggle onClick={toggleVariant} className={styles.menu} />
-      </motion.div>
+      <div className={styles.containerContainer}>
+        <motion.div className={styles.container}>
+          <div className={styles.banner}>
+            <Link to="/">
+              <SvgIconNest />
+              <span>Nest Wellbeing</span>
+            </Link>
+          </div>
+          <MenuToggle onClick={toggleVariant} className={styles.menu} />
+        </motion.div>
+      </div>
     </motion.header>
   );
 }

@@ -1,0 +1,29 @@
+.section {
+  @apply p-8 max-w-4xl mx-auto;
+}
+
+/* container */
+.questions {
+  @apply;
+}
+
+/* individual Q&As */
+.questions > div {
+  @apply mt-6;
+}
+
+.questions > div > p {
+  @apply mt-2;
+}
+
+.button {
+  composes: button from global;
+}
+
+.contact {
+  @apply mt-6;
+}
+
+.contact > div:last-child {
+  @apply flex mt-6 justify-center;
+}

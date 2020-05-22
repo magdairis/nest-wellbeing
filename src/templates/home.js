@@ -13,7 +13,7 @@ export default function HomeTemplate({ data }) {
   return (
     <>
       <section>
-        <Img fluid={frontmatter.splash.image.childImageSharp.fluid} />
+        <Img className={styles.bgImageWrapper} fluid={frontmatter.splash.image.childImageSharp.fluid} />
       </section>
       <section className={styles.section}>
         <h1>{frontmatter.blurbs.heading}</h1>
@@ -27,6 +27,23 @@ export default function HomeTemplate({ data }) {
         </div>
         <div>
           <Link to="/faq" className={styles.button}>Learn more</Link>
+        </div>
+      </section>
+      <section className={styles.testimonial}>
+        <div>
+          <h1>{frontmatter.testimonial.quote}</h1>
+          <p>{frontmatter.testimonial.name}</p>
+        </div>
+      </section>
+      <section>
+        <Img className={styles.bgImageWrapper} fluid={frontmatter.hero.image.childImageSharp.fluid} />
+      </section>
+      <section className={styles.signup}>
+        <div>
+          <h3>{frontmatter.signup.heading}</h3>
+        </div>
+        <div>
+          <Link to="/booking" className={styles.button}>Book now</Link>
         </div>
       </section>
     </>
@@ -44,7 +61,7 @@ export const query = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 1080, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -56,6 +73,22 @@ export const query = graphql`
             title
             paragraph
           }
+        }
+        testimonial {
+          quote
+          name
+        }
+        hero {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1080, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+        signup {
+          heading
         }
       }
     }

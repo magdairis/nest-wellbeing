@@ -1,10 +1,10 @@
 .section {
-  @apply p-6;
+  @apply p-8;
 }
 
 /* container */
 .blurbs {
-  @apply flex flex-wrap justify-between;
+  @apply flex flex-wrap justify-between mb-6;
 }
 
 /* individual blurb */
@@ -18,7 +18,6 @@
 
 .button {
   composes: button from global;
-  @apply px-4 py-2 bg-secondary text-white;
 }
 
 .section > div:last-child {
@@ -29,12 +28,35 @@
 
 @screen sm {
   .blurbs > div {
-    @apply w-5/12 flex-grow max-w-xs;
+    @apply w-5/12 flex-grow max-w-none;
+  }
+  .blurbs > div:nth-child(odd) {
+    @apply pr-6;
   }
 }
 
 @screen lg {
-  .blurbs > div {
-    @apply max-w-sm;
+  .bg-image-wrapper {
+    height: 40rem;
   }
+}
+
+.testimonial {
+  @apply bg-primary text-white p-6;
+}
+
+.testimonial > div {
+  @apply flex flex-col items-center text-center px-4 py-4;
+}
+
+.testimonial > div > p {
+  @apply mt-2;
+}
+
+.signup {
+  @apply flex flex-col p-6 items-center text-center;
+}
+
+.signup > div > h3 {
+  @apply mb-6;
 }

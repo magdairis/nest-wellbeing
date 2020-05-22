@@ -1,0 +1,46 @@
+.root {
+  @apply max-w-4xl mx-auto flex flex-wrap justify-center items-center;
+}
+
+.card {
+  @apply bg-gray-100 border-2 border-gray-200;
+  @apply rounded-lg overflow-hidden shadow-lg;
+  @apply mx-4 mt-8 w-full max-w-sm;
+}
+
+.card > div > * + * {
+  @apply mt-1;
+}
+
+.card > div {
+  @apply p-4;
+}
+
+.card-image {
+  @apply h-40 object-top;
+}
+
+.price {
+  @apply flex tracking-wide;
+}
+
+.price > :nth-child(2) {
+  @apply text-gray-600 ml-2;
+}
+
+.date {
+  @apply flex;
+}
+
+.date > :nth-child(1) {
+  @apply text-teal-700;
+}
+
+.date > h4 {
+  @apply text-base;
+  font-family: "Montserrat";
+}
+
+@screen md {
+  @apply flex;
+}
