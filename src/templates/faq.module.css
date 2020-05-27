@@ -4,7 +4,7 @@
 
 /* container */
 .questions {
-  @apply;
+  @apply font-bold;
 }
 
 /* individual Q&As */

@@ -1,0 +1,7 @@
+.section {
+  @apply p-8 max-w-4xl mx-auto;
+}
+
+.review {
+  @apply font-bold;
+}

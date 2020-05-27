@@ -22,7 +22,7 @@ h2 {
 
 h3 {
   font-family: "Montserrat";
-  @apply text-lg font-bold;
+  @apply text-lg font-bold tracking-wide;
 }
 
 h4 {
