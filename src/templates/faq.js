@@ -12,27 +12,31 @@ export default function FaqTemplate({ data }) {
     <>
       <section className={styles.section}>
         <h1>{frontmatter.title}</h1>
-        <h2>Baby Massage</h2>
+        <div className={styles.title}>
+          <h3>Baby Massage</h3>
+        </div>
         <div className={styles.questions}>
           {frontmatter.babyMassage.map(item => (
             <div>
-              <h3>{item.question}</h3>
+              <h2>{item.question}</h2>
               <p>{item.answer}</p>
             </div>
           ))}
         </div>
-        <h2>Baby Yoga</h2>
+        <div className={styles.title}>
+          <h3>Baby Yoga</h3>
+        </div>
         <div className={styles.questions}>
           {frontmatter.babyYoga.map(item => (
             <div>
-              <h3>{item.question}</h3>
+              <h2>{item.question}</h2>
               <p>{item.answer}</p>
             </div>
           ))}
         </div>
         <div className={styles.contact}>
           <div>
-            <h2>{frontmatter.contact.heading}</h2>
+            <h3>{frontmatter.contact.heading}</h3>
           </div>
           <div>
             <Link to="/contact" className={styles.button}>Contact me</Link>

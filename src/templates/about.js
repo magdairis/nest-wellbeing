@@ -14,12 +14,14 @@ export default function AboutTemplate({ data }) {
     <>
       <section className={styles.section}>
         <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.name}</h2>
-        <MDX>{frontmatter.about}</MDX>
-        <div className={styles.review}>
-          <p>{frontmatter.testimonial.review}</p>
+        <h3>{frontmatter.name}</h3>
+        <div className={styles.paragraph}>
+          <MDX>{frontmatter.about}</MDX>
         </div>
       </section>
+      <div className={styles.review}>
+        <p>{frontmatter.testimonial.review}</p>
+      </div>
     </>
   )
 }

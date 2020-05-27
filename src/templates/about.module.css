@@ -2,6 +2,14 @@
   @apply p-8 max-w-4xl mx-auto;
 }
 
+.section > h3 {
+  @apply text-secondary;
+}
+
+.paragraph > p {
+  @apply my-4;
+}
+
 .review {
-  @apply font-bold;
+  @apply bg-primary text-white p-6;
 }

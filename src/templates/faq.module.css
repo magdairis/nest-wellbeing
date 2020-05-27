@@ -3,7 +3,7 @@
 }
 
 /* container */
-.questions {
+.questions > div > h2 {
   @apply font-bold;
 }
 
@@ -14,6 +14,10 @@
 
 .questions > div > p {
   @apply mt-2;
+}
+
+.title {
+  @apply mt-6 text-secondary;
 }
 
 .button {
