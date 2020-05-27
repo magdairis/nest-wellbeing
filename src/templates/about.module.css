@@ -1,8 +1,8 @@
-.section {
+.about {
   @apply p-8 max-w-4xl mx-auto;
 }
 
-.section > h3 {
+.about > h3 {
   @apply text-secondary;
 }
 
@@ -10,6 +10,18 @@
   @apply my-4;
 }
 
-.review {
-  @apply bg-primary text-white p-6;
+.carousel {
+  @apply bg-primary;
+  overflow-x: hidden;
+}
+
+.carousel > div {
+  position: relative;
+  @apply h-48 max-w-4xl mx-auto;
+}
+
+.testimonial {
+  position: absolute;
+  @apply bg-transparent text-white p-6 top-0 text-center;
+  @apply h-full flex justify-center items-center;
 }

@@ -12,6 +12,8 @@ export default function ClassesTemplate({ data }) {
 
   return (
     <div className={styles.root}>
+      <h1>Classes</h1>
+      <div></div>
       {frontmatter.cards.map(card => (
         <div className={styles.card}>
           <Img className={styles.cardImage} fluid={card.image.childImageSharp.fluid} />
