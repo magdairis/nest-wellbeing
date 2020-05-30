@@ -1,0 +1,12 @@
+.contact {
+  @apply p-8 max-w-4xl mx-auto;
+}
+
+.contact a {
+  font-family: "Montserrat";
+  @apply text-secondary tracking-wide font-bold;
+}
+
+.contact div + div {
+  @apply mt-8;
+}

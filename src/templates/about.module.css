@@ -3,7 +3,7 @@
 }
 
 .about > h3 {
-  @apply text-secondary;
+  @apply text-primary;
 }
 
 .paragraph > p {
