@@ -1,36 +1,21 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, AnimateSharedLayout } from "framer-motion";
 import { Link } from "gatsby";
-import React, { useContext, useEffect, useState, Fragment } from "react";
+import React, { useState } from "react";
 import theme from "tailwindcss/defaultTheme";
 import styles from "./Header.module.css";
 import MenuToggle from "./MenuToggle";
 import Nav from "./Nav";
 import SvgIconNest from "./SvgIconNest";
-import { MediaContext } from "../hooks";
 
 const Header = () => {
-  // const [variant, setVariant] = useState("closed")
   const [open, setOpen] = useState(false)
 
-  const toggleOpen = () => {
-    setOpen(!open)
-    // console.log(variant)
-    // if (variant === "closed") {
-    //   setVariant("open")
-    // } else {
-    //   setVariant("closed")
-    // }
-  }
-  const screen = useContext(MediaContext)
-  useEffect(() => {
-    console.log(screen);
-  }, [screen])
+  const toggleOpen = () => void setOpen(!open)
 
   return (
     <motion.header className={styles.root}
       initial="closed"
       animate={open ? "open" : "closed"}
-    // animate={variant}
     >
       <motion.div
         className={styles.backdrop}
@@ -53,32 +38,42 @@ const Header = () => {
           </Link>
         </div>
         <MenuToggle key="menuToggle" onClick={toggleOpen} className={styles.menu} />
-        <AnimatePresence>
-          {open && (
-            <Nav variants={{
-              open: {
-                transition: {
-                  staggerChildren: 0.2,
-                  delayChildren: 0.2,
-                },
-              },
-              closed: {
-                transition: {
-                  staggerChildren: 0.07,
-                  staggerDirection: -1,
-                },
-              },
-            }} className={styles.navMobile}>
-              {({ href, label, active }) => (
-                <motion.div variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}>
-                  <Link to={href} data-active={active} onClick={() => void setOpen(false)}>
-                    {label}
-                  </Link>
-                </motion.div>
-              )}
-            </Nav>
+        <Nav variants={{
+          open: {
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 0.2,
+            },
+          },
+          closed: {
+            transition: {
+              staggerChildren: 0.07,
+              staggerDirection: -1,
+            },
+          },
+        }} className={styles.navMobile}>
+          {({ href, label, active }) => (
+            <motion.div variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}>
+              <Link to={href} data-active={active} onClick={() => void setOpen(false)}>
+                {label}
+              </Link>
+            </motion.div>
           )}
-        </AnimatePresence>
+        </Nav>
+        <AnimateSharedLayout>
+
+          <Nav className={styles.navDesktop}>
+            {({ href, label, active }) => (
+              <Link to={href}>
+                <span>{label}</span>
+                {active && (
+                  <motion.div layoutId="desktopNavUnderline" />
+                )}
+              </Link>
+            )}
+
+          </Nav>
+        </AnimateSharedLayout>
       </motion.div>
     </motion.header >
   );

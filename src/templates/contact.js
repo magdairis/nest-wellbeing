@@ -12,7 +12,7 @@ export default function ContactTemplate({ data }) {
     <div>
       {frontmatter.items.map(item => {
         return (
-          <div>
+          <div key={item.title}>
             <div className={styles.icon} dangerouslySetInnerHTML={{
               __html: item.icon.childSvgoInline.inlineSVG
             }} />

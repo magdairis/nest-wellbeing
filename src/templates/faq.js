@@ -17,7 +17,7 @@ export default function FaqTemplate({ data }) {
         </div>
         <div className={styles.questions}>
           {frontmatter.babyMassage.map(item => (
-            <div>
+            <div key={item.question}>
               <h2>{item.question}</h2>
               <p>{item.answer}</p>
             </div>
@@ -28,7 +28,7 @@ export default function FaqTemplate({ data }) {
         </div>
         <div className={styles.questions}>
           {frontmatter.babyYoga.map(item => (
-            <div>
+            <div key={item.question}>
               <h2>{item.question}</h2>
               <p>{item.answer}</p>
             </div>
