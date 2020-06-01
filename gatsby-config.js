@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/data/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `svgs`,
+        path: `${__dirname}/src/data/svgs`,
+      },
+    },
+    `gatsby-transformer-svgo-inline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
@@ -20,6 +28,13 @@ module.exports = {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: `${__dirname}/src/components/Layout.js`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        // dimensions: false
+        icon: true
       },
     },
     {

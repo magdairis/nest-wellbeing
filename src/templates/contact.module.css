@@ -1,5 +1,5 @@
 .contact {
-  @apply p-8 max-w-4xl mx-auto;
+  @apply max-w-4xl mx-auto;
 }
 
 .contact a {
@@ -9,4 +9,8 @@
 
 .contact div + div {
   @apply mt-8;
+}
+
+.icon {
+  @apply w-2 h-auto;
 }

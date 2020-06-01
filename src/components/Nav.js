@@ -1,11 +1,13 @@
 import { useLocation } from "@reach/router"
 import React from "react"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
 
 const links = [
     { href: "/", label: "Home" },
-    // { href: "/blog", label: "Blog" },
-    // { href: "/about", label: "About" },
+    { href: "/about", label: "About" },
+    { href: "/classes", label: "Classes" },
+    { href: "/faq", label: "FAQ's" },
     { href: "/contact", label: "Contact" },
 ]
 
@@ -24,11 +26,11 @@ const NavLink = ({ children, href, label, ...props }) => {
 
 const Nav = ({ children, ...props }) => {
     return (
-        <nav {...props}>
+        <motion.nav {...props}>
             {links.map(linkProps => (
                 <NavLink key={linkProps.href} children={children} {...linkProps} />
             ))}
-        </nav>
+        </motion.nav>
     )
 }
 

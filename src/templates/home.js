@@ -19,7 +19,7 @@ export default function HomeTemplate({ data }) {
         <h1>{frontmatter.blurbs.heading}</h1>
         <div className={styles.blurbs}>
           {frontmatter.blurbs.items.map(item => (
-            <div>
+            <div key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.paragraph}</p>
             </div>

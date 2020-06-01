@@ -12,10 +12,6 @@
   @apply shadow-lg;
 }
 
-.container-container {
-  @apply flex justify-center;
-}
-
 .container {
   z-index: 20;
   position: fixed;
@@ -24,12 +20,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @apply px-4 max-w-4xl;
+  @apply px-4 max-w-4xl mx-auto inset-x-0;
 }
 
 .menu {
   z-index: 30;
-  @apply stroke-current;
+  @apply stroke-current w-6;
 }
 
 .banner {
@@ -52,4 +48,24 @@
 
 .banner > a > span {
   @apply text-lg ml-3;
+}
+
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat";
+  @apply w-full h-full z-20 text-white text-lg font-bold tracking-wider;
+}
+
+.nav-mobile > div + div {
+  @apply mt-4;
+}
+
+.nav-mobile a[data-active="true"] {
+  @apply text-secondary;
 }

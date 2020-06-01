@@ -1,52 +1,86 @@
-import React, { useState } from "react";
-import styles from "./Header.module.css";
-import { motion } from "framer-motion";
-import theme from "tailwindcss/defaultTheme";
-import MenuToggle from "./MenuToggle";
-import SvgIconNest from "./SvgIconNest";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "gatsby";
+import React, { useContext, useEffect, useState, Fragment } from "react";
+import theme from "tailwindcss/defaultTheme";
+import styles from "./Header.module.css";
+import MenuToggle from "./MenuToggle";
+import Nav from "./Nav";
+import SvgIconNest from "./SvgIconNest";
+import { MediaContext } from "../hooks";
 
 const Header = () => {
-  const [variant, setVariant] = useState("closed")
+  // const [variant, setVariant] = useState("closed")
+  const [open, setOpen] = useState(false)
 
-  const toggleVariant = () => {
-    console.log(variant)
-    if (variant === "closed") {
-      setVariant("open")
-    } else {
-      setVariant("closed")
-    }
+  const toggleOpen = () => {
+    setOpen(!open)
+    // console.log(variant)
+    // if (variant === "closed") {
+    //   setVariant("open")
+    // } else {
+    //   setVariant("closed")
+    // }
   }
+  const screen = useContext(MediaContext)
+  useEffect(() => {
+    console.log(screen);
+  }, [screen])
 
   return (
     <motion.header className={styles.root}
       initial="closed"
-      animate={variant}
+      animate={open ? "open" : "closed"}
+    // animate={variant}
     >
       <motion.div
         className={styles.backdrop}
         variants={{
           closed: {
-            y: `calc(-100% + ${theme.spacing[16]})`
+            y: `calc(-100% + ${theme.spacing[16]})`,
+            transition: { type: "spring", damping: 25, mass: 0.9, stiffness: 120, delay: 0.3 }
           },
           open: {
             y: 0,
+            transition: { type: "spring", damping: 25, mass: 0.9, stiffness: 120 }
           },
         }}
-        transition={{ type: "spring", damping: 25, mass: 0.9, stiffness: 120 }}
       />
-      <div className={styles.containerContainer}>
-        <motion.div className={styles.container}>
-          <div className={styles.banner}>
-            <Link to="/">
-              <SvgIconNest />
-              <span>Nest Wellbeing</span>
-            </Link>
-          </div>
-          <MenuToggle onClick={toggleVariant} className={styles.menu} />
-        </motion.div>
-      </div>
-    </motion.header>
+      <motion.div className={styles.container}>
+        <div className={styles.banner}>
+          <Link to="/">
+            <SvgIconNest />
+            <span>Nest Wellbeing</span>
+          </Link>
+        </div>
+        <MenuToggle key="menuToggle" onClick={toggleOpen} className={styles.menu} />
+        <AnimatePresence>
+          {open && (
+            <Nav variants={{
+              open: {
+                transition: {
+                  staggerChildren: 0.2,
+                  delayChildren: 0.2,
+                },
+              },
+              closed: {
+                transition: {
+                  staggerChildren: 0.07,
+                  staggerDirection: -1,
+                },
+              },
+            }} className={styles.navMobile}>
+              {({ href, label, active }) => (
+                <motion.div variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}>
+                  <Link to={href} data-active={active} onClick={() => void setOpen(false)}>
+                    {label}
+                  </Link>
+                </motion.div>
+              )}
+            </Nav>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </motion.header >
   );
 }
 
