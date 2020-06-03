@@ -40,20 +40,28 @@ const Header = () => {
         <MenuToggle key="menuToggle" onClick={toggleOpen} className={styles.menu} />
         <Nav variants={{
           open: {
+            display: "flex",
             transition: {
               staggerChildren: 0.2,
               delayChildren: 0.2,
             },
           },
           closed: {
+            display: "none",
             transition: {
               staggerChildren: 0.07,
               staggerDirection: -1,
+              display: {
+                delay: 1
+              }
             },
           },
         }} className={styles.navMobile}>
           {({ href, label, active }) => (
-            <motion.div variants={{ open: { opacity: 1 }, closed: { opacity: 0 } }}>
+            <motion.div variants={{
+              open: { opacity: 1 },
+              closed: { opacity: 0 }
+            }}>
               <Link to={href} data-active={active} onClick={() => void setOpen(false)}>
                 {label}
               </Link>

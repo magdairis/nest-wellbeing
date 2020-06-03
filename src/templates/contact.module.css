@@ -1,5 +1,14 @@
 .contact {
   @apply max-w-4xl mx-auto;
+  @apply flex flex-wrap justify-evenly;
+}
+
+.contact > div {
+  @apply w-full;
+}
+
+.logo > :first-child {
+  @apply w-full h-32 mt-8;
 }
 
 .contact a {
@@ -7,10 +16,28 @@
   @apply text-secondary tracking-wide font-bold;
 }
 
-.contact div + div {
-  @apply mt-8;
+.contact div {
+  @apply mt-4;
+}
+
+.item {
+  @apply mx-4;
+}
+
+.item > h1 {
+  @apply mt-4;
+}
+
+.icon-container {
+  @apply flex justify-center items-center;
 }
 
 .icon {
-  @apply w-2 h-auto;
+  @apply w-16 h-auto;
+}
+
+@screen sm {
+  .contact > div {
+    @apply w-1/3;
+  }
 }
