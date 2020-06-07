@@ -1,19 +1,27 @@
-import { graphql, Link } from "gatsby";
-import React from "react";
-import styles from "./home.module.css";
-import Img from "gatsby-image";
-
+import { graphql, Link } from "gatsby"
+import React from "react"
+import styles from "./home.module.css"
+import Img from "gatsby-image"
 
 export default function HomeTemplate({ data }) {
-  const {
-    body,
-    frontmatter
-  } = data.mdx
+  const { body, frontmatter } = data.mdx
 
   return (
     <>
-      <section>
-        <Img className={styles.bgImageWrapper} fluid={frontmatter.splash.image.childImageSharp.fluid} />
+      <section className={styles.splash}>
+        <div>
+          <Img
+            className={styles.bgImageWrapper}
+            fluid={frontmatter.splash.image.childImageSharp.fluid}
+          />
+          <div />
+          <div>
+            <div>
+              <h1>{frontmatter.splash.headline}</h1>
+              <button className={styles.button}>Book Now</button>
+            </div>
+          </div>
+        </div>
       </section>
       <section className={styles.section}>
         <h1>{frontmatter.blurbs.heading}</h1>
@@ -26,7 +34,9 @@ export default function HomeTemplate({ data }) {
           ))}
         </div>
         <div>
-          <Link to="/faq" className={styles.button}>Learn more</Link>
+          <Link to="/faq" className={styles.button}>
+            Learn more
+          </Link>
         </div>
       </section>
       <section className={styles.testimonial}>
@@ -36,14 +46,19 @@ export default function HomeTemplate({ data }) {
         </div>
       </section>
       <section>
-        <Img className={styles.bgImageWrapper} fluid={frontmatter.hero.image.childImageSharp.fluid} />
+        <Img
+          className={styles.bgImageWrapper}
+          fluid={frontmatter.hero.image.childImageSharp.fluid}
+        />
       </section>
       <section className={styles.signup}>
         <div>
           <h3>{frontmatter.signup.heading}</h3>
         </div>
         <div>
-          <Link to="/booking" className={styles.button}>Book now</Link>
+          <Link to="/classes" className={styles.button}>
+            See classes
+          </Link>
         </div>
       </section>
     </>
@@ -76,7 +91,6 @@ export const query = graphql`
         }
         testimonial {
           quote
-          name
         }
         hero {
           image {

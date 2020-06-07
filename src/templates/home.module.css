@@ -2,6 +2,29 @@
   @apply p-8;
 }
 
+.splash > div {
+  position: relative;
+}
+
+.splash > div > div:not(:first-child) {
+  position: absolute;
+  @apply w-full h-full top-0 left-0;
+}
+
+.splash > div > div:nth-child(3) {
+  @apply flex justify-center items-end;
+  @apply px-8 pb-4 text-white text-center;
+  text-shadow: 0.5px 0.5px 0.5px gray;
+}
+
+.splash > div > div:nth-child(2) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.splash button {
+  @apply mt-2;
+}
+
 /* container */
 .blurbs {
   @apply flex flex-wrap justify-between mb-6;
@@ -32,6 +55,10 @@
   }
   .blurbs > div:nth-child(odd) {
     @apply pr-6;
+  }
+  .splash > div > div:nth-child(3) {
+    @apply justify-start items-end;
+    @apply text-left pb-48;
   }
 }
 

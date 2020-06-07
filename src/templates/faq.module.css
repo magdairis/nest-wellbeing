@@ -17,7 +17,11 @@
 }
 
 .title {
-  @apply mt-6 text-secondary;
+  @apply mt-6 text-primary;
+}
+
+.title > h3 {
+  @apply text-2xl;
 }
 
 .button {

@@ -3,7 +3,7 @@
 }
 
 .about > h3 {
-  @apply text-primary;
+  @apply text-primary text-2xl;
 }
 
 .paragraph > p {
