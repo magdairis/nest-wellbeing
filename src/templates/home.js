@@ -14,10 +14,10 @@ export default function HomeTemplate({ data }) {
             className={styles.bgImageWrapper}
             fluid={frontmatter.splash.image.childImageSharp.fluid}
           />
-          <div />
-          <div>
+          <div className={styles.overlay} />
+          <div className={styles.headline}>
             <div>
-              <h1>{frontmatter.splash.headline}</h1>
+              <h2>{frontmatter.splash.headline}</h2>
               <button className={styles.button}>Book Now</button>
             </div>
           </div>
