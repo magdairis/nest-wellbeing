@@ -11,8 +11,8 @@ const Path = props => (
 );
 
 export const MenuToggle = props => (
-    <button {...props}>
-        <svg width="23" height="23" viewBox="0 0 23 23">
+    <motion.button {...props}>
+        <svg viewBox="0 0 23 23">
             <Path
                 variants={{
                     closed: { d: "M 2 2.5 L 20 2.5" },
@@ -34,7 +34,7 @@ export const MenuToggle = props => (
                 }}
             />
         </svg>
-    </button>
+    </motion.button>
 );
 
 export default MenuToggle;

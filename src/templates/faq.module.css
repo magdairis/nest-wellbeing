@@ -3,8 +3,8 @@
 }
 
 /* container */
-.questions {
-  @apply;
+.questions > div > h2 {
+  @apply font-bold;
 }
 
 /* individual Q&As */
@@ -14,6 +14,14 @@
 
 .questions > div > p {
   @apply mt-2;
+}
+
+.title {
+  @apply mt-6 text-primary;
+}
+
+.title > h3 {
+  @apply text-2xl;
 }
 
 .button {

@@ -12,10 +12,24 @@ export default function FaqTemplate({ data }) {
     <>
       <section className={styles.section}>
         <h1>{frontmatter.title}</h1>
+        <div className={styles.title}>
+          <h3>Baby Massage</h3>
+        </div>
         <div className={styles.questions}>
-          {frontmatter.main.items.map(item => (
-            <div>
-              <h4>{item.question}</h4>
+          {frontmatter.babyMassage.map(item => (
+            <div key={item.question}>
+              <h2>{item.question}</h2>
+              <p>{item.answer}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.title}>
+          <h3>Baby Yoga</h3>
+        </div>
+        <div className={styles.questions}>
+          {frontmatter.babyYoga.map(item => (
+            <div key={item.question}>
+              <h2>{item.question}</h2>
               <p>{item.answer}</p>
             </div>
           ))}
@@ -40,11 +54,13 @@ export const query = graphql`
       body
       frontmatter {
         title
-        main {
-          items {
-            question
-            answer
-          }
+        babyMassage {
+          question
+          answer
+        }
+        babyYoga {
+          question
+          answer
         }
         contact {
           heading
