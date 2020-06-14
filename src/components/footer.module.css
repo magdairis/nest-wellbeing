@@ -1,0 +1,54 @@
+.root {
+  @apply bg-primary;
+}
+
+.footer {
+  @apply max-w-4xl mx-auto px-4;
+  position: relative;
+}
+
+.nav {
+  @apply flex flex-col items-center py-4 text-white;
+}
+
+.nav > * + * {
+  @apply mt-2;
+}
+
+.root hr {
+  @apply border-gray-100 w-64 mx-auto;
+}
+
+div.icons {
+  @apply flex flex-col items-center py-4;
+}
+
+.icons svg {
+  @apply w-16 h-auto;
+}
+
+.icons svg:nth-child(2) {
+  @apply w-8 mt-4;
+}
+
+@screen sm {
+  .nav {
+    @apply flex-row justify-evenly;
+  }
+  .root hr {
+    @apply w-full;
+  }
+  .icons svg:nth-child(1) {
+    position: absolute;
+    top: theme("spacing.4");
+  }
+  .footer {
+    @apply pt-20;
+  }
+  .icons svg:nth-child(2) {
+    @apply mt-0;
+  }
+  .nav > * + * {
+    @apply mt-0;
+  }
+}

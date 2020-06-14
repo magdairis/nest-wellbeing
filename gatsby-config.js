@@ -31,10 +31,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-svgr',
+      resolve: "gatsby-plugin-svgr",
       options: {
         // dimensions: false
-        icon: true
+        icon: true,
       },
     },
     {
@@ -45,6 +45,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    `gatsby-plugin-svgr`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

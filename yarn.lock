@@ -1267,13 +1267,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bearjam/gatsby-transformer-svgo-inline@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bearjam/gatsby-transformer-svgo-inline/-/gatsby-transformer-svgo-inline-1.0.0.tgz#5c78640fd237dbc0870c7968e444c2ecdeeed3c7"
-  integrity sha512-BBsSE8ykksy+kXFX78ECY7jc2Ru4xgZG9IKsCLUiDJiXA9sUw70kOXvFv0uKlVHWpMHx6tOWWX7sLLr8vWBlaQ==
-  dependencies:
-    svgo "^1.3.2"
-
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
