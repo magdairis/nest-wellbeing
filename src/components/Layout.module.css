@@ -1,0 +1,11 @@
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.container {
+  @apply absolute h-full flex flex-col pt-16 w-full;
+}

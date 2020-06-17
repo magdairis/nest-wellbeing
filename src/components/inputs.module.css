@@ -1,0 +1,8 @@
+.text-input {
+  @apply bg-pink-300 border-gray-200 border-2 box-border rounded-md;
+}
+
+.label {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
