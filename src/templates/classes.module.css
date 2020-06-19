@@ -1,3 +1,7 @@
+.top {
+  @apply max-w-4xl mx-auto flex flex-col px-8 py-4;
+}
+
 .root {
   @apply max-w-4xl mx-auto;
   @apply flex flex-wrap justify-center items-center;
@@ -7,7 +11,7 @@
   @apply mx-4 w-full max-w-sm;
 }
 
-.root > h1 {
+.top > h1 {
   @apply mt-6;
 }
 

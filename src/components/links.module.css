@@ -1,0 +1,12 @@
+.text-link {
+  font-family: "Montserrat";
+  @apply text-secondary tracking-wide font-bold;
+}
+
+.button {
+  @apply text-base text-center inline-block;
+  @apply leading-tight tracking-wide;
+  @apply rounded-md shadow-lg;
+  @apply px-4 py-2;
+  @apply bg-secondary text-white;
+}

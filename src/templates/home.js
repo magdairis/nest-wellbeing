@@ -2,6 +2,7 @@ import { graphql, Link } from "gatsby"
 import React from "react"
 import styles from "./home.module.css"
 import Img from "gatsby-image"
+import { ButtonLink } from "../components/links"
 
 export default function HomeTemplate({ data }) {
   const { body, frontmatter } = data.mdx
@@ -18,7 +19,7 @@ export default function HomeTemplate({ data }) {
           <div className={styles.headline}>
             <div>
               <h2>{frontmatter.splash.headline}</h2>
-              <button className={styles.button}>Book Now</button>
+              <ButtonLink>Book Now</ButtonLink>
             </div>
           </div>
         </div>
@@ -34,9 +35,7 @@ export default function HomeTemplate({ data }) {
           ))}
         </div>
         <div>
-          <Link to="/faq" className={styles.button}>
-            Learn more
-          </Link>
+          <ButtonLink to="/faq">Learn more</ButtonLink>
         </div>
       </section>
       <section className={styles.testimonial}>
@@ -56,9 +55,7 @@ export default function HomeTemplate({ data }) {
           <h3>{frontmatter.signup.heading}</h3>
         </div>
         <div>
-          <Link to="/classes" className={styles.button}>
-            See classes
-          </Link>
+          <ButtonLink to="/classes">See classes</ButtonLink>
         </div>
       </section>
     </>

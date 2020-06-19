@@ -1,11 +1,29 @@
+.container {
+  @apply bg-gray-100 border-2 border-gray-200;
+  @apply rounded-lg shadow-lg;
+  @apply p-4 max-w-xs mx-auto my-10;
+}
+
 .form {
-  @apply flex flex-col max-w-sm;
+  @apply flex flex-col max-w-xs justify-center;
 }
 
 .form > div {
-  @apply flex justify-between mt-4;
+  @apply flex flex-col mt-4;
 }
 
 .form label {
-  @apply text-right flex-grow mr-4;
+  @apply mb-2;
+}
+
+.select {
+  @apply flex-col;
+}
+
+.select > div label {
+  @apply ml-4;
+}
+
+div.submit {
+  @apply text-center mt-4;
 }

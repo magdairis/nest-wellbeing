@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./booking.module.css"
 import { useForm } from "react-hook-form"
 import { graphql } from "gatsby"
-import { TextInput, Submit, Label } from "../components/inputs"
+import { TextInput, Submit, Label, CheckBox } from "../components/inputs"
 
 const Booking = ({ data }) => {
   const { register, handleSubmit } = useForm()
@@ -19,22 +19,40 @@ const Booking = ({ data }) => {
   }
   return (
     <>
-      <pre>{JSON.stringify(titles, null, 2)}</pre>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <div>
-          <Label for="name">Name:</Label>
-          <TextInput id="name" ref={register} name="name" />
+      <div>
+        <h1>Booking Form</h1>
+        <p>Fill out the form </p>
+      </div>
+      <div className={styles.container}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div>
+            <Label htmlFor="name">Name:</Label>
+            <TextInput id="name" ref={register} name="name" />
+          </div>
+          <div>
+            <Label htmlFor="email">Email:</Label>
+            <TextInput id="email" ref={register} name="email" />
+          </div>
+          <div>
+            <Label htmlFor="age">Baby's age:</Label>
+            <TextInput id="age" ref={register} name="age" />
+          </div>
+          <div className={styles.select}>
+            <Label htmlFor="interest">Interested in:</Label>
+            {titles.map(function (title) {
+              return (
+                <div key={title}>
+                  <CheckBox id={title} ref={register} name={`class.${title}`} />
+                  <Label htmlFor={title}>{title}</Label>
+                </div>
+              )
+            })}
+          </div>
+        </form>
+        <div className={styles.submit}>
+          <Submit />
         </div>
-        <div>
-          <Label for="email">Email:</Label>
-          <TextInput id="email" ref={register} name="email" />
-        </div>
-        <div>
-          <Label for="age">Baby's age:</Label>
-          <TextInput id="age" ref={register} name="age" />
-        </div>
-        <Submit />
-      </form>
+      </div>
     </>
   )
 }

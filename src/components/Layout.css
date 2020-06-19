@@ -29,11 +29,3 @@ h4 {
   font-family: "Manjari";
   @apply text-xl font-bold;
 }
-
-.button {
-  @apply text-base text-center;
-  @apply leading-tight tracking-wide;
-  @apply rounded-md shadow-lg;
-  @apply px-4 py-2;
-  @apply bg-secondary text-white;
-}

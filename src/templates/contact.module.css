@@ -11,11 +11,6 @@
   @apply w-full h-32 mt-8;
 }
 
-.contact a {
-  font-family: "Montserrat";
-  @apply text-secondary tracking-wide font-bold;
-}
-
 .contact div {
   @apply mt-4;
 }

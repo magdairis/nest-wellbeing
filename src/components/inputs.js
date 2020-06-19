@@ -17,3 +17,9 @@ export const Submit = forwardRef(
 export const Label = ({ className = styles.label, ...props }) => {
   return <label className={className} {...props} />
 }
+
+export const CheckBox = forwardRef(
+  ({ className = styles.checkBox, ...props }, ref) => {
+    return <input type="checkbox" className={className} ref={ref} {...props} />
+  }
+)
