@@ -102,12 +102,17 @@ exports.createSchemaCustomization = ({
       frontmatter: MdxFrontmatter
     }
     type MdxFrontmatter {
+      blurbs: Blurbs
       items: [Item]
       templateKey: String
       about: String @mdx
     }
     type Item {
       mdx: String @mdx
+      paragraph: String @mdx
+    }
+    type Blurbs {
+      items: [Item]
     }
   `)
 }

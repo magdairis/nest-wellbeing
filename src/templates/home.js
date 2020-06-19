@@ -3,6 +3,7 @@ import React from "react"
 import styles from "./home.module.css"
 import Img from "gatsby-image"
 import { ButtonLink } from "../components/links"
+import MDX from "../components/mdx"
 
 export default function HomeTemplate({ data }) {
   const { body, frontmatter } = data.mdx
@@ -19,7 +20,7 @@ export default function HomeTemplate({ data }) {
           <div className={styles.headline}>
             <div>
               <h2>{frontmatter.splash.headline}</h2>
-              <ButtonLink>Book Now</ButtonLink>
+              <ButtonLink to="/booking">Book Now</ButtonLink>
             </div>
           </div>
         </div>
@@ -30,7 +31,7 @@ export default function HomeTemplate({ data }) {
           {frontmatter.blurbs.items.map(item => (
             <div key={item.title}>
               <h3>{item.title}</h3>
-              <p>{item.paragraph}</p>
+              <MDX>{item.paragraph}</MDX>
             </div>
           ))}
         </div>

@@ -1,10 +1,18 @@
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
-import { TextLink } from "./links"
+import { TextLink, Anchor } from "./links"
 
 const components = {
-  a: TextLink,
+  a: ({ href, ...props }) => {
+    const internal = /^\.?\/(?!\/)/.test(href)
+
+    return internal ? (
+      <TextLink to={href} {...props} />
+    ) : (
+      <Anchor href={href} {...props} />
+    )
+  },
 }
 
 const shortcodes = {}

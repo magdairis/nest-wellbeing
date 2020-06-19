@@ -18,11 +18,12 @@ const Booking = ({ data }) => {
     console.log(formData)
   }
   return (
-    <>
-      <div>
-        <h1>Booking Form</h1>
-        <p>Fill out the form </p>
-      </div>
+    <div className={styles.root}>
+      <h1>Booking Form</h1>
+      <p>
+        Fill out the form to register your interest and Vanessa will send you a
+        message to book your place.
+      </p>
       <div className={styles.container}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <div>
@@ -32,6 +33,10 @@ const Booking = ({ data }) => {
           <div>
             <Label htmlFor="email">Email:</Label>
             <TextInput id="email" ref={register} name="email" />
+          </div>
+          <div>
+            <Label htmlFor="phone">Phone number:</Label>
+            <TextInput id="phone" ref={register} name="phone" />
           </div>
           <div>
             <Label htmlFor="age">Baby's age:</Label>
@@ -53,7 +58,7 @@ const Booking = ({ data }) => {
           <Submit />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
