@@ -8,14 +8,15 @@ const Booking = ({ data }) => {
   const { register, handleSubmit } = useForm()
   let titles = data.mdx.frontmatter.cards.map(x => x.title)
   function onSubmit(formData) {
-    fetch("/api/hello", {
+    fetch("/api/contact/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-    console.log(formData)
+      .then(console.log)
+      .catch(console.log)
   }
   return (
     <div className={styles.root}>
@@ -53,10 +54,10 @@ const Booking = ({ data }) => {
               )
             })}
           </div>
+          <div className={styles.submit}>
+            <Submit />
+          </div>
         </form>
-        <div className={styles.submit}>
-          <Submit />
-        </div>
       </div>
     </div>
   )

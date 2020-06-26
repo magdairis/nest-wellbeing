@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@now/node": "^1.7.1",
+    "@sendgrid/mail": "^7.2.1",
     "@svgr/webpack": "^5.4.0",
     "@vercel/node": "^1.7.0",
     "classnames": "^2.2.6",
