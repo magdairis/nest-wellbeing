@@ -1,12 +1,9 @@
-import { graphql, Link } from "gatsby";
-import React from "react";
-import styles from "./faq.module.css";
+import { graphql, Link } from "gatsby"
+import React from "react"
+import styles from "./faq.module.css"
 
 export default function FaqTemplate({ data }) {
-  const {
-    body,
-    frontmatter
-  } = data.mdx
+  const { body, frontmatter } = data.mdx
 
   return (
     <>
@@ -39,7 +36,9 @@ export default function FaqTemplate({ data }) {
             <h3>{frontmatter.contact.heading}</h3>
           </div>
           <div>
-            <Link to="/contact" className={styles.button}>Contact me</Link>
+            <Link to="/contact" className={styles.button}>
+              Contact me
+            </Link>
           </div>
         </div>
       </section>

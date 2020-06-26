@@ -74,7 +74,7 @@
   display: none;
 }
 
-@screen sm {
+@screen lg {
   .nav-mobile {
     display: none;
   }

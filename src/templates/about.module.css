@@ -6,12 +6,21 @@
   @apply text-primary text-2xl;
 }
 
+.about h4 {
+  font-family: "Montserrat";
+  @apply my-4;
+}
+
+.about a {
+  @apply inline text-center;
+}
+
 .paragraph > p {
   @apply my-4;
 }
 
 .carousel {
-  @apply bg-secondary;
+  @apply bg-teal-900;
   overflow-x: hidden;
 }
 
@@ -24,4 +33,11 @@
   position: absolute;
   @apply bg-transparent text-white p-6 top-0 text-center;
   @apply h-full flex justify-center items-center;
+}
+
+@screen md {
+  .bgImageWrapper {
+    float: right;
+    @apply w-1/2 mb-2 ml-4;
+  }
 }
