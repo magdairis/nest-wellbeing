@@ -27,7 +27,7 @@ div.icons {
   @apply w-16 h-auto;
 }
 
-.icons svg:nth-child(2) {
+.icons a > svg {
   @apply w-8 mt-4;
 }
 

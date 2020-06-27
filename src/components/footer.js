@@ -12,7 +12,9 @@ const Footer = () => {
         <hr />
         <div className={styles.icons}>
           <SvgIconNest />
-          <SvgIconFacebook />
+          <a href="https://www.facebook.com/Babybearwood">
+            <SvgIconFacebook />
+          </a>
         </div>
       </footer>
     </div>
