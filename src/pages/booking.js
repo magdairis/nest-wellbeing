@@ -3,6 +3,7 @@ import styles from "./booking.module.css"
 import { useForm } from "react-hook-form"
 import { graphql } from "gatsby"
 import { TextInput, Submit, Label, CheckBox } from "../components/inputs"
+import SEO from "../components/seo"
 
 const Booking = ({ data }) => {
   const { register, handleSubmit } = useForm()
@@ -20,6 +21,7 @@ const Booking = ({ data }) => {
   }
   return (
     <div className={styles.root}>
+      <SEO title="Booking" />
       <h1>Booking Form</h1>
       <p>
         To book a class or wellbeing session, Vanessa needs just a few details

@@ -2,12 +2,14 @@ import { graphql, Link } from "gatsby"
 import React from "react"
 import styles from "./faq.module.css"
 import { ButtonLink } from "../components/links"
+import SEO from "../components/seo"
 
 export default function FaqTemplate({ data }) {
   const { body, frontmatter } = data.mdx
 
   return (
     <>
+      <SEO title="FAQ" />
       <section className={styles.section}>
         <h1>{frontmatter.title}</h1>
         <div className={styles.title}>

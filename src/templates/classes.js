@@ -4,12 +4,14 @@ import styles from "./classes.module.css"
 import cx from "classnames"
 import Img from "gatsby-image"
 import { TextLink, ButtonLink } from "../components/links"
+import SEO from "../components/seo"
 
 export default function ClassesTemplate({ data }) {
   const { body, frontmatter } = data.mdx
 
   return (
     <>
+      <SEO title="Classes" />
       <div className={styles.top}>
         <h1>Classes</h1>
         <p>

@@ -4,12 +4,14 @@ import styles from "./home.module.css"
 import Img from "gatsby-image"
 import { ButtonLink } from "../components/links"
 import MDX from "../components/mdx"
+import SEO from "../components/seo"
 
 export default function HomeTemplate({ data }) {
   const { body, frontmatter } = data.mdx
 
   return (
     <>
+      <SEO title="Home" />
       <section className={styles.splash}>
         <div>
           <Img

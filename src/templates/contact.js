@@ -1,16 +1,15 @@
-import React from "react";
-import { graphql } from "gatsby";
-import styles from "./contact.module.css";
-import MDX from "../components/mdx";
+import React from "react"
+import { graphql } from "gatsby"
+import styles from "./contact.module.css"
+import MDX from "../components/mdx"
 import SvgIconNest from "../components/SvgIconNest"
+import SEO from "../components/seo"
 
 export default function ContactTemplate({ data }) {
-  const {
-    body,
-    frontmatter
-  } = data.mdx
+  const { body, frontmatter } = data.mdx
   return (
     <div className={styles.contact}>
+      <SEO title="Contact" />
       <div className={styles.logo}>
         <SvgIconNest />
       </div>
@@ -18,9 +17,12 @@ export default function ContactTemplate({ data }) {
         return (
           <div key={item.title} className={styles.item}>
             <div className={styles.iconContainer}>
-              <div className={styles.icon} dangerouslySetInnerHTML={{
-                __html: item.icon.childSvgoInline.inlineSVG
-              }} />
+              <div
+                className={styles.icon}
+                dangerouslySetInnerHTML={{
+                  __html: item.icon.childSvgoInline.inlineSVG,
+                }}
+              />
             </div>
             <h1>{item.title}</h1>
             <MDX>{item.mdx}</MDX>

@@ -6,6 +6,7 @@ import useInterval from "../hooks/useInterval"
 import { AnimatePresence, motion } from "framer-motion"
 import Img from "gatsby-image"
 import { ButtonLink } from "../components/links"
+import SEO from "../components/seo"
 
 const motionProps = {
   initial: { x: -1000, opacity: 0 },
@@ -34,6 +35,7 @@ export default function AboutTemplate({ data }) {
 
   return (
     <>
+      <SEO title="About" />
       <section className={styles.about}>
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.name}</h3>
