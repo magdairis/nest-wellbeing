@@ -43,9 +43,9 @@ export default function AboutTemplate({ data }) {
         />
         <div className={styles.paragraph}>
           <MDX>{frontmatter.about}</MDX>
+          <h4>Learn how Vanessa can support you and your baby</h4>
         </div>
         <div>
-          <h4>Learn how Vanessa can support you and your baby</h4>
           <ButtonLink to="/classes">Find a class</ButtonLink>
         </div>
       </section>

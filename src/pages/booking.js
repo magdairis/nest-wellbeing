@@ -22,8 +22,9 @@ const Booking = ({ data }) => {
     <div className={styles.root}>
       <h1>Booking Form</h1>
       <p>
-        Fill out the form to register your interest and Vanessa will send you a
-        message to book your place.
+        To book a class or wellbeing session, Vanessa needs just a few details
+        about you and your baby. Submit the form and Vanessa will send you a
+        message to book your place. You can choose more than one option.
       </p>
       <div className={styles.container}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>

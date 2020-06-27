@@ -4,11 +4,19 @@
 
 .root {
   @apply max-w-4xl mx-auto;
-  @apply flex flex-wrap justify-center items-center;
+  @apply flex flex-wrap justify-center items-center mb-16;
 }
 
 .root > * {
   @apply mx-4 w-full max-w-sm;
+}
+
+.root > div:last-child {
+  @apply mt-10 text-center;
+}
+
+.root > div:last-child a {
+  @apply mt-4;
 }
 
 .top > h1 {

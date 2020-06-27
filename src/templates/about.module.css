@@ -1,5 +1,5 @@
 .about {
-  @apply p-8 max-w-4xl mx-auto;
+  @apply p-8 max-w-4xl mx-auto mb-4;
 }
 
 .about > h3 {
@@ -8,11 +8,11 @@
 
 .about h4 {
   font-family: "Montserrat";
-  @apply my-4;
+  @apply my-8;
 }
 
-.about a {
-  @apply inline text-center;
+.about > div:last-child {
+  @apply mx-auto text-center;
 }
 
 .paragraph > p {
@@ -35,9 +35,13 @@
   @apply h-full flex justify-center items-center;
 }
 
+.bgImageWrapper {
+  @apply mt-4;
+}
+
 @screen md {
   .bgImageWrapper {
     float: right;
-    @apply w-1/2 mb-2 ml-4;
+    @apply w-1/2 mb-2 ml-4 mt-4;
   }
 }

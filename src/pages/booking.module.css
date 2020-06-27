@@ -1,5 +1,5 @@
 .root {
-  @apply max-w-4xl px-8 py-4 mx-auto;
+  @apply max-w-4xl px-8 py-4 mx-auto mb-8;
 }
 
 .root > h1 {
@@ -32,5 +32,5 @@
 }
 
 div.submit {
-  @apply text-center mt-4;
+  @apply text-center mt-4 mx-auto mb-4;
 }

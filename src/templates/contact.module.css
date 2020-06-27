@@ -1,6 +1,7 @@
 .contact {
   @apply max-w-4xl mx-auto;
   @apply flex flex-wrap justify-evenly;
+  @apply mb-20;
 }
 
 .contact > div {
@@ -21,6 +22,11 @@
 
 .item > h1 {
   @apply mt-4;
+}
+
+.item a {
+  font-family: "Montserrat";
+  @apply text-secondary tracking-wide font-bold;
 }
 
 .icon-container {

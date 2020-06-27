@@ -1,6 +1,7 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import styles from "./faq.module.css"
+import { ButtonLink } from "../components/links"
 
 export default function FaqTemplate({ data }) {
   const { body, frontmatter } = data.mdx
@@ -36,9 +37,7 @@ export default function FaqTemplate({ data }) {
             <h3>{frontmatter.contact.heading}</h3>
           </div>
           <div>
-            <Link to="/contact" className={styles.button}>
-              Contact me
-            </Link>
+            <ButtonLink to="/contact">Contact me</ButtonLink>
           </div>
         </div>
       </section>

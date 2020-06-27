@@ -31,7 +31,7 @@
 }
 
 .section {
-  @apply p-8 max-w-6xl mx-auto;
+  @apply p-8 max-w-6xl mx-auto my-4;
 }
 
 /* container */
@@ -51,7 +51,6 @@
 .section > div:last-child {
   display: flex;
   justify-content: center;
-  @apply mt-3;
 }
 
 @screen sm {
@@ -87,7 +86,7 @@
 }
 
 .testimonial > div {
-  @apply flex flex-col items-center text-center px-4 py-4;
+  @apply flex flex-col items-center text-center px-4 py-8;
 }
 
 .testimonial > div > p {
@@ -95,9 +94,15 @@
 }
 
 .signup {
-  @apply flex flex-col p-6 items-center text-center;
+  @apply flex flex-col p-6 items-center text-center my-4;
 }
 
 .signup > div > h3 {
-  @apply mb-6;
+  @apply mb-8;
+}
+
+@screen lg {
+  .signup > div > h3 {
+    @apply whitespace-pre-wrap;
+  }
 }

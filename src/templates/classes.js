@@ -3,7 +3,7 @@ import React from "react"
 import styles from "./classes.module.css"
 import cx from "classnames"
 import Img from "gatsby-image"
-import { TextLink } from "../components/links"
+import { TextLink, ButtonLink } from "../components/links"
 
 export default function ClassesTemplate({ data }) {
   const { body, frontmatter } = data.mdx
@@ -42,6 +42,10 @@ export default function ClassesTemplate({ data }) {
             </div>
           </div>
         ))}
+        <div>
+          <h3>Ready to join a class?</h3>
+          <ButtonLink to="/booking">Book now</ButtonLink>
+        </div>
       </div>
     </>
   )

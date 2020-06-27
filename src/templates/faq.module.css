@@ -1,5 +1,5 @@
 .section {
-  @apply p-8 max-w-4xl mx-auto;
+  @apply p-8 max-w-4xl mx-auto mb-8;
 }
 
 /* container */
@@ -24,14 +24,10 @@
   @apply text-2xl;
 }
 
-.button {
-  composes: button from global;
-}
-
 .contact {
-  @apply mt-6;
+  @apply mt-8;
 }
 
 .contact > div:last-child {
-  @apply flex mt-6 justify-center;
+  @apply flex mt-8 justify-center;
 }
